@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include <stdio.h>
 #include <vector>
 #include <set>
 
@@ -32,10 +33,13 @@ void print_path();
 
 int main (int argc, char* argv[])
 {
+    // give the original state by command line
+    if (argc > 1) ori_state = string(argv[1]);
+    
     cout << "农夫-" << FARMER << " 狼-" << WOLF << " 羊-"
         << SHEEP << " 白菜-" << CABBAGE << endl;
-	// cross the river
-	if (crossed(river_cross(ori_state))) cout << "成功^_^" << endl;
+    // cross the river
+    if (crossed(river_cross(ori_state))) cout << "成功^_^" << endl;
     // print the path
     print_path();
 	return 0;
